@@ -198,11 +198,11 @@ h1, h2, h3,
 
 /* Navbar scaling */
 @media (min-width: 992px) {
-  :root { --nav-logo-h: 145px; --nav-title-size: 3rem; }
+  :root { --nav-logo-h: 145px; --nav-title-size: 2.5rem; }
 }
 @media (min-width: 1600px) {
   .navbar { padding-top: 1rem; padding-bottom: 1rem; }
-  :root { --nav-logo-h: 155px; --nav-title-size: 4rem; }
+  :root { --nav-logo-h: 155px; --nav-title-size: 3.5rem; }
 }
 @media (min-width: 2000px) {
   :root { --nav-logo-h: 165px; --nav-title-size: 5rem; }
