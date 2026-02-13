@@ -142,11 +142,30 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
 }
 
 .navbar-title {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
   white-space: nowrap;
-  pointer-events: none;
   font-weight: 600;
-  font-size: 1.75rem; /* base */
+  font-size: 1.75rem;
+  text-align: center;
 }
+
+/* Stack on smaller screens */
+@media (max-width: 900px) {
+  .navbar-title {
+    flex-direction: column;
+    line-height: 1.1;
+    gap: 0;
+  }
+
+  .brand-line-1,
+  .brand-line-2 {
+    display: block;
+  }
+}
+
 
 /* Reserve symmetric space on desktop so title "feels" centered */
 @media (min-width: 992px) {
@@ -156,31 +175,27 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
   .nav-slot-right { justify-content: flex-end; }
 }
 
-/* Hide title before it forces wrapping */
-@media (max-width: 900px) {
-  .navbar-title { display: none; }
-}
 
 /* ========== Logo sizing ========== */
 .navbar-logo {
-  height: 80px;   /* base */
+  height: 100px;   /* base */
   width: auto;
   display: block; /* removes inline baseline quirks */
 }
 
 @media (min-width: 992px) {
-  .navbar-logo { height: 100px; }
+  .navbar-logo { height: 125px; }
   .navbar-title { font-size: 2rem; }
 }
 
 @media (min-width: 1600px) {
   .navbar { padding-top: 1rem; padding-bottom: 1rem; }
-  .navbar-logo { height: 115px; }
+  .navbar-logo { height: 135px; }
   .navbar-title { font-size: 2.5rem; }
 }
 
 @media (min-width: 2000px) {
-  .navbar-logo { height: 135px; }
+  .navbar-logo { height: 145px; }
   .navbar-title { font-size: 2.8rem; }
 }
 
