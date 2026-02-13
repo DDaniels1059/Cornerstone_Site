@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Cornerstone Bindery</title>
+  <meta name="description" content="Contact Cornerstone Bindery to request a quote or ask a question." />
+
+  <!-- Cinzel -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Your site CSS -->
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR (Always hamburger) + Offcanvas menu -->
+  <nav class="navbar bg-body-tertiary border-bottom">
+    <div class="container">
+
+      <!-- LEFT -->
+      <div class="nav-slot-left">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="gallery/logowhite.png" alt="Cornerstone Bindery Logo" class="navbar-logo">
+        </a>
+      </div>
+
+      <!-- CENTER -->
+      <div class="nav-slot-center">
+        <span class="navbar-title">Cornerstone Bindery</span>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="nav-slot-right">
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="offcanvas" data-bs-target="#siteMenu"
+                aria-controls="siteMenu" aria-label="Open menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Offcanvas menu -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="siteMenu" aria-labelledby="siteMenuLabel">
+        <div class="offcanvas-header offcanvas-header-custom">
+          <h5 class="offcanvas-title offcanvas-title-lg" id="siteMenuLabel">MENU</h5>
+          <button type="button" class="btn-close offcanvas-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="rebinding.html">Rebinding Options</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+          </ul>
+
+          <hr>
+
+          <a class="btn btn-dark w-100" href="contact.html">Request a Quote</a>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- PAGE -->
+  <main class="py-5">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-9 col-xl-8">
+
+          <h1 class="h2 fw-semibold mb-2">Contact</h1>
+          <p class="text-secondary mb-4">
+            Request a quote, ask a question, or describe what you’d like done. Messages are sent directly to me.
+          </p>
+
+          <div class="p-4 p-md-5 bg-white border rounded-4">
+            <form id="contactForm" novalidate>
+
+              <!-- Honeypot: bots fill this, humans won’t -->
+              <input
+                type="text"
+                name="website"
+                id="website"
+                autocomplete="off"
+                tabindex="-1"
+                style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;"
+              >
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="name">Name</label>
+                  <input class="form-control" id="name" name="name" type="text" required maxlength="80">
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="email">Email</label>
+                  <input class="form-control" id="email" name="email" type="email" required maxlength="120">
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <label class="form-label" for="service">What are you looking for?</label>
+                <select class="form-select" id="service" name="service" required>
+                  <option value="" selected disabled>Select an option…</option>
+                  <option>Rebinding</option>
+                  <option>Restoration / Repair</option>
+                  <option>Custom Options (leather, spine text, ribbons, etc.)</option>
+                  <option>Not sure — I have questions</option>
+                </select>
+                <div class="invalid-feedback">Please choose an option.</div>
+              </div>
+
+              <div class="row g-3 mt-0">
+                <div class="col-md-6">
+                  <label class="form-label" for="bookType">Bible / Book type (optional)</label>
+                  <input class="form-control" id="bookType" name="bookType" type="text" maxlength="120"
+                         placeholder="e.g., ESV Study Bible, KJV, family Bible">
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="timeline">Timeline (optional)</label>
+                  <input class="form-control" id="timeline" name="timeline" type="text" maxlength="120"
+                         placeholder="e.g., no rush / 2–3 weeks / before Easter">
+                </div>
+              </div>
+
+              <div class="mt-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="6" required maxlength="4000"
+                          placeholder="Tell me what you want done and any details that matter (cover damage, leather preferences, spine text, ribbons, etc.)."></textarea>
+                <div class="invalid-feedback">Please enter a message.</div>
+              </div>
+
+              <button class="btn btn-dark w-100 mt-4" type="submit" id="submitBtn">
+                Send Message
+              </button>
+
+              <div class="mt-3">
+                <div class="alert alert-success d-none" id="okBox">
+                  Sent! I’ll reply soon.
+                </div>
+                <div class="alert alert-danger d-none" id="errBox">
+                  Something went wrong. Please try again.
+                </div>
+              </div>
+
+              <p class="text-secondary small mt-3 mb-0">
+                You can also email directly: <a href="mailto:info@cornerstonebindery.com">info@cornerstonebindery.com</a>
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-4 border-top">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+      <div class="text-secondary small">© <span id="y"></span> Cornerstone Bindery</div>
+      <div class="small">
+        <a class="text-decoration-none" href="contact.html">Contact</a>
+        <span class="text-secondary mx-2">•</span>
+        <a class="text-decoration-none" href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Footer year -->
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Contact form submit -->
+  <script>
+    (function () {
+      const form = document.getElementById("contactForm");
+      const btn = document.getElementById("submitBtn");
+      const okBox = document.getElementById("okBox");
+      const errBox = document.getElementById("errBox");
+
+      if (!form) return;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Bootstrap-style client validation
+        if (!form.checkValidity()) {
+          form.classList.add("was-validated");
+          return;
+        }
+
+        okBox.classList.add("d-none");
+        errBox.classList.add("d-none");
+
+        btn.disabled = true;
+        const oldText = btn.textContent;
+        btn.textContent = "Sending...";
+
+        const payload = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          service: form.service.value,
+          bookType: form.bookType.value.trim(),
+          timeline: form.timeline.value.trim(),
+          message: form.message.value.trim(),
+          website: (document.getElementById("website")?.value || "").trim(), // honeypot
+        };
+
+        try {
+          const res = await fetch("/api/contact", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+
+          if (res.ok) {
+            form.reset();
+            form.classList.remove("was-validated");
+            okBox.classList.remove("d-none");
+          } else {
+            errBox.classList.remove("d-none");
+          }
+        } catch (err) {
+          errBox.classList.remove("d-none");
+        } finally {
+          btn.disabled = false;
+          btn.textContent = oldText;
+        }
+      });
+    })();
+  </script>
+
+  <!-- Bootstrap JS bundle (required for offcanvas) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
