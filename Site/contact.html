@@ -116,6 +116,54 @@
                 <div class="invalid-feedback">Please choose an option.</div>
               </div>
 
+              <hr class="my-4">
+
+              <h5 class="fw-semibold mb-3">Binding Options (Optional)</h5>
+
+              <div class="mb-3">
+                <label class="form-label">Leather Tier</label>
+                <select class="form-select" name="leatherTier" required>
+                  <option value="" selected disabled>Select leather tier…</option>
+                  <option value="Standard">Standard Leather</option>
+                  <option value="Premium">Premium Leather</option>
+                </select>
+                <div class="invalid-feedback">Please choose a leather tier.</div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label d-block">Add-Ons</label>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Raised Hubs" id="raisedHubs" name="addons">
+                  <label class="form-check-label" for="raisedHubs">
+                    Raised Hubs
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Spine Stamping" id="spineStamping" name="addons">
+                  <label class="form-check-label" for="spineStamping">
+                    Gold Spine Stamping
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Ribbon Markers" id="ribbons" name="addons">
+                  <label class="form-check-label" for="ribbons">
+                    Ribbon Markers
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="Gilded Edges" id="gilding" name="addons">
+                  <label class="form-check-label" for="gilding">
+                    Gilded Edges
+                  </label>
+                </div>
+
+              </div>
+
+
               <div class="row g-3 mt-0">
                 <div class="col-md-6">
                   <label class="form-label" for="bookType">Bible / Book type (optional)</label>
@@ -204,15 +252,22 @@
         const oldText = btn.textContent;
         btn.textContent = "Sending...";
 
+
+
+        const selectedAddons = Array.from(document.querySelectorAll('input[name="addons"]:checked')).map(el => el.value);
+
         const payload = {
           name: form.name.value.trim(),
           email: form.email.value.trim(),
           service: form.service.value,
+          leatherTier: form.leatherTier.value,
+          addons: selectedAddons,
           bookType: form.bookType.value.trim(),
           timeline: form.timeline.value.trim(),
           message: form.message.value.trim(),
           website: (document.getElementById("website")?.value || "").trim(), // honeypot
         };
+
 
         try {
           const res = await fetch("/api/contact", {

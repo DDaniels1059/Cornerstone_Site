@@ -4,24 +4,33 @@ export async function onRequestPost(context) {
 
     const data = await request.json();
 
-    const {
+      const {
       name,
       email,
       service,
+      leatherTier,
+      addons,
       bookType,
       timeline,
       message,
       website
     } = data;
 
+
     // Honeypot spam protection
     if (website) {
       return new Response("Spam detected", { status: 400 });
     }
 
+    // Required field checks
     if (!name || !email || !message) {
       return new Response("Missing required fields", { status: 400 });
     }
+
+    if (!leatherTier) {
+      return new Response("Leather tier is required", { status: 400 });
+    }
+
 
     const emailBody = `
 New website message:
@@ -29,12 +38,15 @@ New website message:
 Name: ${name}
 Email: ${email}
 Service: ${service || "N/A"}
+Leather Tier: ${leatherTier || "N/A"}
+Add-ons: ${addons && addons.length ? addons.join(", ") : "None"}
 Book Type: ${bookType || "N/A"}
 Timeline: ${timeline || "N/A"}
 
 Message:
 ${message}
-    `;
+`;
+
 
     const resendResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
