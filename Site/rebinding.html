@@ -2,418 +2,358 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Rebinding Options | Cornerstone Bindery</title>
-    <meta name="description" content="Rebinding options, base pricing, add-ons, and process for Cornerstone Bindery." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rebinding Options | Cornerstone Bindery</title>
+  <meta name="description" content="Rebinding options, base pricing, add-ons, and process for Cornerstone Bindery." />
 
-    <!-- Cinzel -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="assets/site.css">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 
 <body>
+  <!-- NAVBAR + Offcanvas -->
+  <nav class="navbar bg-body-tertiary border-bottom">
+    <div class="container">
+      <!-- LEFT -->
+      <a class="navbar-brand d-flex align-items-center nav-slot-left" href="index.html">
+        <img src="gallery/logowhite.png" alt="Cornerstone Bindery logo" class="navbar-logo">
+      </a>
 
-    <nav class="navbar bg-body-tertiary border-bottom">
-        <div class="container">
+      <!-- CENTER -->
+      <div class="nav-slot-center">
+        <span class="navbar-title">
+          <span class="brand-line-1">Cornerstone</span>
+          <span class="brand-line-2">Bindery</span>
+        </span>
+      </div>
 
-            <div class="nav-slot-left">
-                <a class="navbar-brand d-flex align-items-center" href="index.html">
-                    <img src="gallery/logowhite.png" alt="Cornerstone Bindery Logo" class="navbar-logo">
-                </a>
-            </div>
+      <!-- RIGHT -->
+      <div class="nav-slot-right">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#siteMenu"
+          aria-controls="siteMenu"
+          aria-label="Open menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
 
-            <div class="nav-slot-center">
-                <span class="navbar-title">
-                    <span class="brand-line-1">Cornerstone</span>
-                    <span class="brand-line-2">Bindery</span>
-                </span>
-            </div>
-
-            <div class="nav-slot-right">
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#siteMenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="siteMenu">
-                <div class="offcanvas-header offcanvas-header-custom">
-                    <h5 class="offcanvas-title offcanvas-title-lg">MENU</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav">
-                        <li class="nav-item"><a class="nav-link active" href="rebinding.html">Rebinding Options</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    </ul>
-                    <hr>
-                    <a class="btn btn-dark w-100" href="contact.html">Request a Quote</a>
-                </div>
-            </div>
-
+      <!-- Offcanvas menu -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="siteMenu" aria-labelledby="siteMenuLabel">
+        <div class="offcanvas-header offcanvas-header-custom">
+          <h2 class="offcanvas-title offcanvas-title-lg" id="siteMenuLabel">Menu</h2>
+          <button
+            type="button"
+            class="btn-close offcanvas-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
         </div>
-    </nav>
 
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="rebinding.html">Rebinding Options</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
 
+          <hr>
+
+          <a class="btn btn-dark w-100" href="contact.html">Request a Quote</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pb-5">
+    <!-- PAGE HEADER -->
     <header class="py-5">
-        <div class="container">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-8">
-                    <h1 class="display-6 fw-semibold mb-2">Rebinding Options & Pricing</h1>
-                    <p class="lead text-secondary mb-0">
-                        Pricing is based on the overall size category of your Bible and selected add-ons.
-                    </p>
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a class="btn btn-dark btn-lg" href="contact.html">Request a Quote</a>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h1 class="display-6 fw-semibold mb-2">Rebinding Options &amp; Pricing</h1>
+            <p class="lead text-secondary mb-0">
+              Pricing is based on the overall size category of your Bible and selected add-ons.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-dark btn-lg" href="contact.html">Request a Quote</a>
+          </div>
         </div>
+      </div>
     </header>
 
-
-    <main class="pb-5">
-        <div class="container">
-
-            <!-- BASIC PRICES -->
-            <section class="mb-5">
-                <div class="p-4 p-md-5 bg-white border rounded-4">
-                    <h2 class="h4 fw-semibold mb-4">Base Pricing</h2>
-
-                    <div class="row g-4">
-
-                        <div class="col-md-6 col-lg-3">
-                            <div class="p-4 border rounded-4 h-100 text-center">
-                                <h3 class="h5 fw-semibold">Small</h3>
-                                <p class="text-secondary small mb-2">Compact / near 6"</p>
-                                <div class="fw-semibold fs-5">$115–$130</div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3">
-                            <div class="p-4 border rounded-4 h-100 text-center">
-                                <h3 class="h5 fw-semibold">Medium</h3>
-                                <p class="text-secondary small mb-2">Standard / near 7"</p>
-                                <div class="fw-semibold fs-5">$150–$165</div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3">
-                            <div class="p-4 border rounded-4 h-100 text-center">
-                                <h3 class="h5 fw-semibold">Large</h3>
-                                <p class="text-secondary small mb-2">Near 8–9"</p>
-                                <div class="fw-semibold fs-5">$215–$230</div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-3">
-                            <div class="p-4 border rounded-4 h-100 text-center">
-                                <h3 class="h5 fw-semibold">Extra Large</h3>
-                                <p class="text-secondary small mb-2">Oversized</p>
-                                <div class="fw-semibold fs-5">$250+</div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- WHAT’S INCLUDED -->
-            <section class="mb-5">
-                <div class="p-4 p-md-5 bg-white border rounded-4">
-                    <h2 class="h4 fw-semibold mb-3">What’s Included in a Standard Rebind</h2>
-                    <ul class="mb-0">
-                        <li>Edge-lined Bible rebind</li>
-                        <li>Raised hubs on spine</li>
-                        <li>Spine stamping: “Holy Bible”, translation, and maker’s mark</li>
-                        <li>Up to 3 ribbon markers</li>
-                        <li>Solid matching end-pages</li>
-                    </ul>
-                </div>
-            </section>
-
-
-            <!-- ADD-ONS -->
-            <section class="mb-5">
-                <div class="p-4 p-md-5 bg-white border rounded-4">
-                    <h2 class="h4 fw-semibold mb-4">Add-Ons</h2>
-
-                    <div class="row g-3">
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="addon-card border rounded-4 overflow-hidden">
-
-                                <!-- Clickable header -->
-                                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#addonPerimeterStitching"
-                                    aria-expanded="false" aria-controls="addonPerimeterStitching">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-semibold">Perimeter Stitching</span>
-                                        <span class="fw-semibold">$20</span>
-                                    </div>
-                                    <div class="text-secondary small mt-1">View details</div>
-                                </button>
-
-                                <!-- Collapsible details -->
-                                <div class="collapse" id="addonPerimeterStitching">
-                                    <div class="p-4 border-top bg-body-tertiary text-center">
-
-                                        <!-- Image wrapper (controls width) -->
-                                        <div class="addon-detail-wrapper mx-auto">
-
-                                            <img src="/gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
-                                                alt="Example of Perimeter Stitching" loading="lazy">
-
-                                            <p class="text-secondary mb-0">
-                                                Raised hubs are the traditional “bands” on the spine.
-                                                They create a structured profile and a classic aesthetic.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="addon-card border rounded-4 overflow-hidden">
-
-                                <!-- Clickable header -->
-                                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#addonLinerGiltLine" aria-expanded="false"
-                                    aria-controls="addonLinerGiltLine">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-semibold">Liner Gilt Line</span>
-                                        <span class="fw-semibold">$15</span>
-                                    </div>
-                                    <div class="text-secondary small mt-1">View details</div>
-                                </button>
-
-                                <!-- Collapsible details -->
-                                <div class="collapse" id="addonLinerGiltLine">
-                                    <div class="p-4 border-top bg-body-tertiary text-center">
-
-                                        <!-- Image wrapper (controls width) -->
-                                        <div class="addon-detail-wrapper mx-auto">
-
-                                            <img src="/gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
-                                                alt="Example of Gilt Line" loading="lazy">
-
-                                            <p class="text-secondary mb-0">
-                                                Raised hubs are the traditional “bands” on the spine.
-                                                They create a structured profile and a classic aesthetic.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="addon-card border rounded-4 overflow-hidden">
-
-                                <!-- Clickable header -->
-                                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#addonHalfYapp" aria-expanded="false"
-                                    aria-controls="addonHalfYapp">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-semibold">Half Yapp</span>
-                                        <span class="fw-semibold">$15</span>
-                                    </div>
-                                    <div class="text-secondary small mt-1">View details</div>
-                                </button>
-
-                                <!-- Collapsible details -->
-                                <div class="collapse" id="addonHalfYapp">
-                                    <div class="p-4 border-top bg-body-tertiary text-center">
-
-                                        <!-- Image wrapper (controls width) -->
-                                        <div class="addon-detail-wrapper mx-auto">
-
-                                            <img src="/gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
-                                                alt="Example of Gilt Line" loading="lazy">
-
-                                            <p class="text-secondary mb-0">
-                                                Raised hubs are the traditional “bands” on the spine.
-                                                They create a structured profile and a classic aesthetic.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="addon-card border rounded-4 overflow-hidden">
-
-                                <!-- Clickable header -->
-                                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#addonFullYapp" aria-expanded="false"
-                                    aria-controls="addonFullYapp">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-semibold">Full Yapp</span>
-                                        <span class="fw-semibold">$35-45</span>
-                                    </div>
-                                    <div class="text-secondary small mt-1">View details</div>
-                                </button>
-
-                                <!-- Collapsible details -->
-                                <div class="collapse" id="addonFullYapp">
-                                    <div class="p-4 border-top bg-body-tertiary text-center">
-
-                                        <!-- Image wrapper (controls width) -->
-                                        <div class="addon-detail-wrapper mx-auto">
-
-                                            <img src="/gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
-                                                alt="Example of Gilt Line" loading="lazy">
-
-                                            <p class="text-secondary mb-0">
-                                                Raised hubs are the traditional “bands” on the spine.
-                                                They create a structured profile and a classic aesthetic.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="addon-card border rounded-4 overflow-hidden">
-
-                                <!-- Clickable header -->
-                                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#addonArtGilt" aria-expanded="false"
-                                    aria-controls="addonArtGilt">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-semibold">Art Gilt</span>
-                                        <span class="fw-semibold">$25</span>
-                                    </div>
-                                    <div class="text-secondary small mt-1">View details</div>
-                                </button>
-
-                                <!-- Collapsible details -->
-                                <div class="collapse" id="addonArtGilt">
-                                    <div class="p-4 border-top bg-body-tertiary text-center">
-
-                                        <!-- Image wrapper (controls width) -->
-                                        <div class="addon-detail-wrapper mx-auto">
-
-                                            <img src="/gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
-                                                alt="Example of Gilt Line" loading="lazy">
-
-                                            <p class="text-secondary mb-0">
-                                                Raised hubs are the traditional “bands” on the spine.
-                                                They create a structured profile and a classic aesthetic.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-                        <div class="col-md-6 col-lg-4">
-                            <div class="addon-card border rounded-4 overflow-hidden">
-
-                                <!-- Clickable header -->
-                                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
-                                    data-bs-toggle="collapse" data-bs-target="#addonExpedited" aria-expanded="false"
-                                    aria-controls="addonExpedited">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-semibold">Expedited Option</span>
-                                        <span class="fw-semibold">$100</span>
-                                    </div>
-                                    <div class="text-secondary small mt-1">View details</div>
-                                </button>
-
-                                <!-- Collapsible details -->
-                                <div class="collapse" id="addonExpedited">
-                                    <div class="p-4 border-top bg-body-tertiary text-center">
-
-                                        <!-- Image wrapper (controls width) -->
-                                        <div class="addon-detail-wrapper mx-auto">
-
-                                            <img src="/gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
-                                                alt="Example of Gilt Line" loading="lazy">
-
-                                            <p class="text-secondary mb-0">
-                                                Raised hubs are the traditional “bands” on the spine.
-                                                They create a structured profile and a classic aesthetic.
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-            </section>
-
-
-            <!-- PROCESS -->
-            <section>
-                <div class="p-4 p-md-5 bg-body-tertiary border rounded-4">
-                    <h2 class="h4 fw-semibold mb-3">Payment & Process</h2>
-                    <p class="text-secondary">
-                        I accept Credit Card, PayPal, Venmo, Cash App, and Apple Pay.
-                    </p>
-                    <p class="text-secondary mb-0">
-                        Payment is normally collected during or upon completion of the rebind. No payment is required
-                        upon waitlist entry.
-                    </p>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-
-    <footer class="py-4 border-top">
-        <div class="container d-flex justify-content-between">
-            <div class="text-secondary small">© <span id="y"></span> Cornerstone Bindery</div>
-            <div class="small">
-                <a class="text-decoration-none" href="contact.html">Contact</a>
-                <span class="mx-2 text-secondary">•</span>
-                <a class="text-decoration-none" href="about.html">About</a>
+    <div class="container">
+      <!-- BASE PRICING -->
+      <section class="mb-5" aria-labelledby="basePricing">
+        <div class="p-4 p-md-5 bg-white border rounded-4">
+          <h2 class="h4 fw-semibold mb-4" id="basePricing">Base Pricing</h2>
+
+          <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+              <div class="p-4 border rounded-4 h-100 text-center">
+                <h3 class="h5 fw-semibold">Small</h3>
+                <p class="text-secondary small mb-2">Compact / near 6"</p>
+                <div class="fw-semibold fs-5">$115–$130</div>
+              </div>
             </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="p-4 border rounded-4 h-100 text-center">
+                <h3 class="h5 fw-semibold">Medium</h3>
+                <p class="text-secondary small mb-2">Standard / near 7"</p>
+                <div class="fw-semibold fs-5">$150–$165</div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="p-4 border rounded-4 h-100 text-center">
+                <h3 class="h5 fw-semibold">Large</h3>
+                <p class="text-secondary small mb-2">Near 8–9"</p>
+                <div class="fw-semibold fs-5">$215–$230</div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+              <div class="p-4 border rounded-4 h-100 text-center">
+                <h3 class="h5 fw-semibold">Extra Large</h3>
+                <p class="text-secondary small mb-2">Oversized</p>
+                <div class="fw-semibold fs-5">$250+</div>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
+      </section>
 
-    <script>
-        document.getElementById("y").textContent = new Date().getFullYear();
-    </script>
+      <!-- WHAT'S INCLUDED -->
+      <section class="mb-5" aria-labelledby="included">
+        <div class="p-4 p-md-5 bg-white border rounded-4">
+          <h2 class="h4 fw-semibold mb-3" id="included">What’s Included in a Standard Rebind</h2>
+          <ul class="mb-0">
+            <li>Edge-lined Bible rebind</li>
+            <li>Raised hubs on spine</li>
+            <li>Spine stamping: “Holy Bible”, translation, and maker’s mark</li>
+            <li>Up to 3 ribbon markers</li>
+            <li>Solid matching end-pages</li>
+          </ul>
+        </div>
+      </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- ADD-ONS -->
+      <section class="mb-5" aria-labelledby="addons">
+        <div class="p-4 p-md-5 bg-white border rounded-4">
+          <h2 class="h4 fw-semibold mb-4" id="addons">Add-Ons</h2>
+
+          <div class="row g-3">
+            <!-- Add-on Card (repeat this pattern) -->
+            <div class="col-md-6 col-lg-4">
+              <div class="addon-card border rounded-4 overflow-hidden">
+                <button
+                  class="addon-toggle w-100 text-start p-3 bg-white border-0"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#addonPerimeterStitching"
+                  aria-expanded="false"
+                  aria-controls="addonPerimeterStitching">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Perimeter Stitching</span>
+                    <span class="fw-semibold">$20</span>
+                  </div>
+                  <div class="text-secondary small mt-1">View details</div>
+                </button>
+
+                <div class="collapse" id="addonPerimeterStitching">
+                  <div class="p-4 border-top bg-body-tertiary text-center">
+                    <div class="addon-detail-wrapper mx-auto">
+                      <img
+                        src="gallery/bibleimage.png"
+                        class="img-fluid rounded-4 border mb-3"
+                        alt="Example of perimeter stitching"
+                        loading="lazy">
+                      <p class="text-secondary mb-0">
+                        Perimeter stitching adds a finished edge and extra durability around the cover.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="addon-card border rounded-4 overflow-hidden">
+                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#addonLinerGiltLine" aria-expanded="false"
+                  aria-controls="addonLinerGiltLine">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Liner Gilt Line</span>
+                    <span class="fw-semibold">$15</span>
+                  </div>
+                  <div class="text-secondary small mt-1">View details</div>
+                </button>
+
+                <div class="collapse" id="addonLinerGiltLine">
+                  <div class="p-4 border-top bg-body-tertiary text-center">
+                    <div class="addon-detail-wrapper mx-auto">
+                      <img src="gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
+                        alt="Example of a liner gilt line" loading="lazy">
+                      <p class="text-secondary mb-0">
+                        A gilt line adds a subtle gold accent along the liner for a classic look.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="addon-card border rounded-4 overflow-hidden">
+                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#addonHalfYapp" aria-expanded="false"
+                  aria-controls="addonHalfYapp">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Half Yapp</span>
+                    <span class="fw-semibold">$15</span>
+                  </div>
+                  <div class="text-secondary small mt-1">View details</div>
+                </button>
+
+                <div class="collapse" id="addonHalfYapp">
+                  <div class="p-4 border-top bg-body-tertiary text-center">
+                    <div class="addon-detail-wrapper mx-auto">
+                      <img src="gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
+                        alt="Example of a half yapp cover" loading="lazy">
+                      <p class="text-secondary mb-0">
+                        Half yapp extends the cover slightly past the text block for protection.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="addon-card border rounded-4 overflow-hidden">
+                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#addonFullYapp" aria-expanded="false"
+                  aria-controls="addonFullYapp">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Full Yapp</span>
+                    <span class="fw-semibold">$35–$45</span>
+                  </div>
+                  <div class="text-secondary small mt-1">View details</div>
+                </button>
+
+                <div class="collapse" id="addonFullYapp">
+                  <div class="p-4 border-top bg-body-tertiary text-center">
+                    <div class="addon-detail-wrapper mx-auto">
+                      <img src="gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
+                        alt="Example of a full yapp cover" loading="lazy">
+                      <p class="text-secondary mb-0">
+                        Full yapp wraps further around the fore-edge for maximum protection.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="addon-card border rounded-4 overflow-hidden">
+                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#addonArtGilt" aria-expanded="false"
+                  aria-controls="addonArtGilt">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Art Gilt</span>
+                    <span class="fw-semibold">$25</span>
+                  </div>
+                  <div class="text-secondary small mt-1">View details</div>
+                </button>
+
+                <div class="collapse" id="addonArtGilt">
+                  <div class="p-4 border-top bg-body-tertiary text-center">
+                    <div class="addon-detail-wrapper mx-auto">
+                      <img src="gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
+                        alt="Example of art gilt edges" loading="lazy">
+                      <p class="text-secondary mb-0">
+                        Art gilt adds a decorative edge finish for a distinctive, heirloom look.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+              <div class="addon-card border rounded-4 overflow-hidden">
+                <button class="addon-toggle w-100 text-start p-3 bg-white border-0" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#addonExpedited" aria-expanded="false"
+                  aria-controls="addonExpedited">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-semibold">Expedited Option</span>
+                    <span class="fw-semibold">$100</span>
+                  </div>
+                  <div class="text-secondary small mt-1">View details</div>
+                </button>
+
+                <div class="collapse" id="addonExpedited">
+                  <div class="p-4 border-top bg-body-tertiary text-center">
+                    <div class="addon-detail-wrapper mx-auto">
+                      <img src="gallery/bibleimage.png" class="img-fluid rounded-4 border mb-3"
+                        alt="Example of expedited service" loading="lazy">
+                      <p class="text-secondary mb-0">
+                        Expedited service moves your project to the front of the queue when available.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End add-ons -->
+          </div>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section aria-labelledby="process">
+        <div class="p-4 p-md-5 bg-body-tertiary border rounded-4">
+          <h2 class="h4 fw-semibold mb-3" id="process">Payment &amp; Process</h2>
+          <p class="text-secondary">
+            I accept Credit Card, PayPal, Venmo, Cash App, and Apple Pay.
+          </p>
+          <p class="text-secondary mb-0">
+            Payment is normally collected during or upon completion of the rebind. No payment is required upon waitlist entry.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="py-4 border-top">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between gap-2">
+      <div class="text-secondary small">© <span id="y"></span> Cornerstone Bindery</div>
+      <div class="small">
+        <a class="text-decoration-none" href="contact.html">Contact</a>
+        <span class="mx-2 text-secondary">•</span>
+        <a class="text-decoration-none" href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="functions/site.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

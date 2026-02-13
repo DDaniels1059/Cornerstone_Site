@@ -1,32 +1,52 @@
-/* ========== Typography ========== */
-h1, h2, h3, .navbar-title, .offcanvas-title {
-  font-family: "Cinzel", serif;
+/* =======================
+   Tokens / Global
+======================= */
+:root {
+  --font-display: "Cinzel", serif;
+
+  /* Containers (default = Bootstrap) */
+  --container-1600: 1560px;
+  --container-2000: 1760px;
+
+  /* Offcanvas */
+  --offcanvas-width: 280px;
+  --offcanvas-title-size: 1.25rem;
+  --offcanvas-link-size: 1.05rem;
+
+  /* Navbar */
+  --nav-logo-h: 100px;
+  --nav-title-size: 2.25rem;
+  --nav-slot-w: 140px;
+
+  /* Toggler */
+  --toggler-pad-y: 0.25rem;
+  --toggler-pad-x: 0.5rem;
+  --toggler-icon: 1.5rem;
+}
+
+/* Typography */
+h1, h2, h3,
+.navbar-title,
+.offcanvas-title,
+.offcanvas-title-lg {
+  font-family: var(--font-display);
   letter-spacing: 0.5px;
 }
 
-/* ========== Wider containers on ultra-wide screens ========== */
+/* Ultra-wide container widths */
 @media (min-width: 1600px) {
-  .container,
-  .container-lg,
-  .container-xl,
-  .container-xxl {
-    max-width: 1560px;
-  }
+  .container, .container-lg, .container-xl, .container-xxl { max-width: var(--container-1600); }
 }
-
 @media (min-width: 2000px) {
-  .container,
-  .container-lg,
-  .container-xl,
-  .container-xxl {
-    max-width: 1760px;
-  }
+  .container, .container-lg, .container-xl, .container-xxl { max-width: var(--container-2000); }
 }
 
-/* ========== Offcanvas width ========== */
-.offcanvas { --bs-offcanvas-width: 280px; }
+/* =======================
+   Offcanvas
+======================= */
+.offcanvas { --bs-offcanvas-width: var(--offcanvas-width); }
 
-/* Offcanvas header centering */
+/* Header centering + close button */
 .offcanvas-header-custom {
   position: relative;
   display: flex;
@@ -36,25 +56,22 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
   padding-bottom: 1rem;
 }
 
-/* Center title perfectly */
-.offcanvas-title-lg {
-  margin: 0;
-  text-align: center;
-}
-
-/* Remove close button from layout flow */
 .offcanvas-close {
   position: absolute;
   right: 1rem;
 }
 
-/* Decorative line under MENU */
+/* Title (single definition) */
 .offcanvas-title-lg {
-  position: relative;
-  display: inline-block;
+  width: 100%;
   margin: 0;
   text-align: center;
-  padding-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: var(--offcanvas-title-size);
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.75rem; /* space for underline */
 }
 
 .offcanvas-title-lg::after {
@@ -69,35 +86,10 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
   opacity: 0.6;
 }
 
-/* ========== Offcanvas typography (MENU + links) ========== */
-.offcanvas-title-lg {
-  width: 100%;
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 1.25rem; /* base */
-}
-
+/* Links (single definition) */
 .offcanvas .nav-link {
-  font-size: 1.05rem; /* base */
-  padding-top: 0.65rem;
-  padding-bottom: 0.65rem;
-}
-
-@media (min-width: 992px) {
-  .offcanvas-title-lg { font-size: 1.4rem; }
-  .offcanvas .nav-link { font-size: 1.1rem; }
-}
-@media (min-width: 1600px) {
-  .offcanvas-title-lg { font-size: 1.6rem; }
-  .offcanvas .nav-link { font-size: 1.2rem; }
-}
-@media (min-width: 2000px) {
-  .offcanvas-title-lg { font-size: 1.75rem; }
-  .offcanvas .nav-link { font-size: 1.28rem; }
-}
-
-.offcanvas .nav-link {
+  font-size: var(--offcanvas-link-size);
+  padding-block: 0.65rem;
   font-weight: 400;
   transition: all 0.15s ease;
 }
@@ -107,7 +99,20 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
   letter-spacing: 0.5px;
 }
 
-/* ========== Navbar layout (3 slots) ========== */
+/* Offcanvas scaling */
+@media (min-width: 992px) {
+  :root { --offcanvas-title-size: 1.4rem; --offcanvas-link-size: 1.1rem; }
+}
+@media (min-width: 1600px) {
+  :root { --offcanvas-title-size: 1.6rem; --offcanvas-link-size: 1.2rem; }
+}
+@media (min-width: 2000px) {
+  :root { --offcanvas-title-size: 1.75rem; --offcanvas-link-size: 1.28rem; }
+}
+
+/* =======================
+   Navbar (3 slots)
+======================= */
 .navbar .container {
   display: flex;
   align-items: center;
@@ -115,14 +120,12 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
   gap: 12px;
 }
 
-/* Remove Bootstrap default brand spacing */
 .navbar-brand {
   padding: 0;
   margin: 0;
   line-height: 1;
 }
 
-/* Left / Right slots (small screens: auto width, no forced space) */
 .nav-slot-left,
 .nav-slot-right {
   flex: 0 0 auto;
@@ -131,7 +134,6 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
   align-items: center;
 }
 
-/* Center slot */
 .nav-slot-center {
   flex: 1 1 auto;
   display: flex;
@@ -142,17 +144,31 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
 }
 
 .navbar-title {
+  position: relative;
   display: flex;
   gap: 6px;
   align-items: center;
   justify-content: center;
   white-space: nowrap;
   font-weight: 600;
-  font-size: 1.75rem;
+  font-size: var(--nav-title-size);
   text-align: center;
+  padding-bottom: 8px;
 }
 
-/* Stack on smaller screens */
+.navbar-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.7;
+}
+
+/* Stack title lines on smaller screens */
 @media (max-width: 900px) {
   .navbar-title {
     flex-direction: column;
@@ -161,47 +177,42 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
   }
 
   .brand-line-1,
-  .brand-line-2 {
-    display: block;
-  }
+  .brand-line-2 { display: block; }
 }
 
-
-/* Reserve symmetric space on desktop so title "feels" centered */
+/* Symmetric left/right space on desktop */
 @media (min-width: 992px) {
   .nav-slot-left,
-  .nav-slot-right { width: 140px; }
+  .nav-slot-right { width: var(--nav-slot-w); }
+
   .nav-slot-left { justify-content: flex-start; }
   .nav-slot-right { justify-content: flex-end; }
 }
 
-
-/* ========== Logo sizing ========== */
+/* Logo sizing via variable */
 .navbar-logo {
-  height: 100px;   /* base */
+  height: var(--nav-logo-h);
   width: auto;
-  display: block; /* removes inline baseline quirks */
+  display: block;
 }
 
+/* Navbar scaling */
 @media (min-width: 992px) {
-  .navbar-logo { height: 125px; }
-  .navbar-title { font-size: 2rem; }
+  :root { --nav-logo-h: 145px; --nav-title-size: 3rem; }
 }
-
 @media (min-width: 1600px) {
   .navbar { padding-top: 1rem; padding-bottom: 1rem; }
-  .navbar-logo { height: 135px; }
-  .navbar-title { font-size: 2.5rem; }
+  :root { --nav-logo-h: 155px; --nav-title-size: 4rem; }
 }
-
 @media (min-width: 2000px) {
-  .navbar-logo { height: 145px; }
-  .navbar-title { font-size: 2.8rem; }
+  :root { --nav-logo-h: 165px; --nav-title-size: 5rem; }
 }
 
-/* ========== Hamburger (toggler) sizing ========== */
+/* =======================
+   Hamburger toggler
+======================= */
 .navbar-toggler {
-  padding: 0.25rem 0.5rem;
+  padding: var(--toggler-pad-y) var(--toggler-pad-x);
   line-height: 1;
   display: flex;
   align-items: center;
@@ -209,58 +220,33 @@ h1, h2, h3, .navbar-title, .offcanvas-title {
 }
 
 .navbar-toggler-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--toggler-icon);
+  height: var(--toggler-icon);
 }
 
+/* Toggler scaling */
 @media (min-width: 992px) {
-  .navbar-toggler { padding: 0.45rem 0.7rem; }
-  .navbar-toggler-icon { width: 1.85rem; height: 1.85rem; }
+  :root { --toggler-pad-y: 0.45rem; --toggler-pad-x: 0.7rem; --toggler-icon: 1.85rem; }
 }
-
 @media (min-width: 1200px) {
-  .navbar-toggler { padding: 0.55rem 0.8rem; }
-  .navbar-toggler-icon { width: 2rem; height: 2rem; }
+  :root { --toggler-pad-y: 0.55rem; --toggler-pad-x: 0.8rem; --toggler-icon: 2rem; }
 }
-
 @media (min-width: 1600px) {
-  .navbar-toggler { padding: 0.6rem 0.9rem; }
-  .navbar-toggler-icon { width: 2rem; height: 2rem; }
+  :root { --toggler-pad-y: 0.6rem; --toggler-pad-x: 0.9rem; --toggler-icon: 2rem; }
 }
-
 @media (min-width: 2000px) {
-  .navbar-toggler { padding: 0.75rem 1rem; }
-  .navbar-toggler-icon { width: 2.4rem; height: 2.4rem; }
+  :root { --toggler-pad-y: 0.75rem; --toggler-pad-x: 1rem; --toggler-icon: 2.4rem; }
 }
 
-/* ========== Addon (toggler) Card ========== */
+/* =======================
+   Addons
+======================= */
+.addon-card { transition: transform 120ms ease, box-shadow 120ms ease; }
+.addon-card:hover { transform: translateY(-1px); }
 
+.addon-card .addon-toggle { cursor: pointer; }
+.addon-card .addon-toggle:hover { background: rgba(0,0,0,0.02); }
+.addon-card .addon-toggle:focus { outline: none; }
 
-.addon-card .addon-toggle {
-  cursor: pointer;
-}
-
-.addon-card .addon-toggle:hover {
-  background: rgba(0,0,0,0.02);
-}
-
-.addon-card .addon-toggle:focus {
-  outline: none;
-}
-
-.addon-card {
-  transition: transform 120ms ease, box-shadow 120ms ease;
-}
-
-.addon-card:hover {
-  transform: translateY(-1px);
-}
-
-.addon-detail-wrapper {
-  max-width: 420px;   /* controls width of both image and text */
-}
-
-.addon-detail-wrapper p {
-  text-align: center;
-}
-
+.addon-detail-wrapper { max-width: 420px; }
+.addon-detail-wrapper p { text-align: center; }
