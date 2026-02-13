@@ -1,0 +1,219 @@
+/* ========== Typography ========== */
+h1, h2, h3, .navbar-title, .offcanvas-title {
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.5px;
+}
+
+/* ========== Wider containers on ultra-wide screens ========== */
+@media (min-width: 1600px) {
+  .container,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 1560px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 1760px;
+  }
+}
+
+/* ========== Offcanvas width ========== */
+.offcanvas { --bs-offcanvas-width: 280px; }
+
+/* Offcanvas header centering */
+.offcanvas-header-custom {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+/* Center title perfectly */
+.offcanvas-title-lg {
+  margin: 0;
+  text-align: center;
+}
+
+/* Remove close button from layout flow */
+.offcanvas-close {
+  position: absolute;
+  right: 1rem;
+}
+
+/* Decorative line under MENU */
+.offcanvas-title-lg {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  text-align: center;
+  padding-bottom: 0.75rem;
+}
+
+.offcanvas-title-lg::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  background-color: currentColor;
+  opacity: 0.6;
+}
+
+/* ========== Offcanvas typography (MENU + links) ========== */
+.offcanvas-title-lg {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 1.25rem; /* base */
+}
+
+.offcanvas .nav-link {
+  font-size: 1.05rem; /* base */
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+
+@media (min-width: 992px) {
+  .offcanvas-title-lg { font-size: 1.4rem; }
+  .offcanvas .nav-link { font-size: 1.1rem; }
+}
+@media (min-width: 1600px) {
+  .offcanvas-title-lg { font-size: 1.6rem; }
+  .offcanvas .nav-link { font-size: 1.2rem; }
+}
+@media (min-width: 2000px) {
+  .offcanvas-title-lg { font-size: 1.75rem; }
+  .offcanvas .nav-link { font-size: 1.28rem; }
+}
+
+.offcanvas .nav-link {
+  font-weight: 400;
+  transition: all 0.15s ease;
+}
+
+.offcanvas .nav-link:hover {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ========== Navbar layout (3 slots) ========== */
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* Remove Bootstrap default brand spacing */
+.navbar-brand {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Left / Right slots (small screens: auto width, no forced space) */
+.nav-slot-left,
+.nav-slot-right {
+  flex: 0 0 auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Center slot */
+.nav-slot-center {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+}
+
+.navbar-title {
+  white-space: nowrap;
+  pointer-events: none;
+  font-weight: 600;
+  font-size: 1.75rem; /* base */
+}
+
+/* Reserve symmetric space on desktop so title "feels" centered */
+@media (min-width: 992px) {
+  .nav-slot-left,
+  .nav-slot-right { width: 140px; }
+  .nav-slot-left { justify-content: flex-start; }
+  .nav-slot-right { justify-content: flex-end; }
+}
+
+/* Hide title before it forces wrapping */
+@media (max-width: 900px) {
+  .navbar-title { display: none; }
+}
+
+/* ========== Logo sizing ========== */
+.navbar-logo {
+  height: 80px;   /* base */
+  width: auto;
+  display: block; /* removes inline baseline quirks */
+}
+
+@media (min-width: 992px) {
+  .navbar-logo { height: 100px; }
+  .navbar-title { font-size: 2rem; }
+}
+
+@media (min-width: 1600px) {
+  .navbar { padding-top: 1rem; padding-bottom: 1rem; }
+  .navbar-logo { height: 115px; }
+  .navbar-title { font-size: 2.5rem; }
+}
+
+@media (min-width: 2000px) {
+  .navbar-logo { height: 135px; }
+  .navbar-title { font-size: 2.8rem; }
+}
+
+/* ========== Hamburger (toggler) sizing ========== */
+.navbar-toggler {
+  padding: 0.25rem 0.5rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-toggler-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 992px) {
+  .navbar-toggler { padding: 0.45rem 0.7rem; }
+  .navbar-toggler-icon { width: 1.85rem; height: 1.85rem; }
+}
+
+@media (min-width: 1200px) {
+  .navbar-toggler { padding: 0.55rem 0.8rem; }
+  .navbar-toggler-icon { width: 2rem; height: 2rem; }
+}
+
+@media (min-width: 1600px) {
+  .navbar-toggler { padding: 0.6rem 0.9rem; }
+  .navbar-toggler-icon { width: 2rem; height: 2rem; }
+}
+
+@media (min-width: 2000px) {
+  .navbar-toggler { padding: 0.75rem 1rem; }
+  .navbar-toggler-icon { width: 2.4rem; height: 2.4rem; }
+}
