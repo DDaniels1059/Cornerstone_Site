@@ -1,371 +1,303 @@
-/* ========== Typography ========== */
-h1,
-h2,
-h3,
-.navbar-title,
-.offcanvas-title {
-  font-family: "Cinzel", serif;
-  letter-spacing: 0.5px;
+/* ===============================
+   Cornerstone Bindery — site.css
+   (soft gray editorial + subtle gold accents)
+   =============================== */
+
+:root{
+  --cb-bg:#f1f1f0;
+  --cb-surface:#fafafa;
+  --cb-section:#e2e2e2;
+  --cb-text:#202020;
+  --cb-muted:#6f6f6f;
+  --cb-accent:#9c8752;
+  --cb-border:rgba(0,0,0,.08);
 }
 
-/* ========== Wider containers on ultra-wide screens ========== */
-@media (min-width: 1600px) {
+/* Base */
+body{ background:var(--cb-bg); color:var(--cb-text); }
 
-  .container,
-  .container-lg,
-  .container-xl,
-  .container-xxl {
-    max-width: 1560px;
-  }
+/* Bootstrap utility overrides (keeps your markup unchanged) */
+.navbar{ background:var(--cb-surface)!important; border-bottom:1px solid var(--cb-border); }
+.bg-body-tertiary{ background:var(--cb-section)!important; }
+.bg-white{ background:var(--cb-surface)!important; }
+.text-secondary{ color:var(--cb-muted)!important; }
+.border{ border-color:var(--cb-border)!important; }
+footer{ background:var(--cb-surface); }
+
+/* Buttons */
+.btn-dark{ background-color:var(--cb-text); border-color:var(--cb-text); }
+.btn-outline-dark{ border-color:var(--cb-accent); color:var(--cb-accent); }
+.btn-outline-dark:hover{ background-color:var(--cb-accent); color:#fff; }
+
+/* Optional accent outline button (used below) */
+.btn-outline-accent{
+  border-color:var(--cb-accent);
+  color:var(--cb-accent);
+}
+.btn-outline-accent:hover{
+  background:var(--cb-accent);
+  color:#fff;
 }
 
-@media (min-width: 2000px) {
+/* Typography */
+h1,h2,h3,.navbar-title,.offcanvas-title{ font-family:"Cinzel",serif; letter-spacing:.5px; }
 
-  .container,
-  .container-lg,
-  .container-xl,
-  .container-xxl {
-    max-width: 1760px;
-  }
+/* Wider containers on ultra-wide screens */
+@media (min-width:1600px){
+  .container,.container-lg,.container-xl,.container-xxl{ max-width:1560px; }
+}
+@media (min-width:2000px){
+  .container,.container-lg,.container-xl,.container-xxl{ max-width:1760px; }
 }
 
-/* ========== Offcanvas width ========== */
-.offcanvas {
-  --bs-offcanvas-width: 280px;
-}
+/* Offcanvas width */
+.offcanvas{ --bs-offcanvas-width:280px; }
 
 /* Offcanvas header centering */
-.offcanvas-header-custom {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 1.5rem;
-  padding-bottom: 1rem;
+.offcanvas-header-custom{
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding-top:1.5rem;
+  padding-bottom:1rem;
+}
+.offcanvas-close{ position:absolute; right:1rem; }
+
+/* Offcanvas title + underline */
+.offcanvas-title-lg{
+  width:100%;
+  margin:0;
+  text-align:center;
+  font-weight:700;
+  letter-spacing:1px;
+  font-size:1.25rem;
+  position:relative;
+  display:inline-block;
+  padding-bottom:.75rem;
+}
+.offcanvas-title-lg::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:0;
+  transform:translateX(-50%);
+  width:70%;
+  height:2px;
+  background-color:currentColor;
+  opacity:.6;
 }
 
-/* Center title perfectly */
-.offcanvas-title-lg {
-  margin: 0;
-  text-align: center;
+/* Offcanvas links */
+.offcanvas .nav-link{
+  font-size:1.05rem;
+  padding-top:.65rem;
+  padding-bottom:.65rem;
+  font-weight:400;
+  transition:all .15s ease;
+}
+.offcanvas .nav-link:hover{
+  font-weight:700;
+  letter-spacing:.5px;
+}
+.offcanvas .nav-link.active{
+  color:var(--cb-accent)!important;
+  font-weight:700;
 }
 
-/* Remove close button from layout flow */
-.offcanvas-close {
-  position: absolute;
-  right: 1rem;
+@media (min-width:992px){
+  .offcanvas-title-lg{ font-size:1.4rem; }
+  .offcanvas .nav-link{ font-size:1.1rem; }
+}
+@media (min-width:1600px){
+  .offcanvas-title-lg{ font-size:1.6rem; }
+  .offcanvas .nav-link{ font-size:1.2rem; }
+}
+@media (min-width:2000px){
+  .offcanvas-title-lg{ font-size:1.75rem; }
+  .offcanvas .nav-link{ font-size:1.28rem; }
 }
 
-/* Decorative line under MENU */
-.offcanvas-title-lg {
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  text-align: center;
-  padding-bottom: 0.75rem;
+/* Navbar layout (3 slots) */
+.navbar .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.navbar-brand{ padding:0; margin:0; line-height:1; }
+
+.nav-slot-left,.nav-slot-right{
+  flex:0 0 auto;
+  width:auto;
+  display:flex;
+  align-items:center;
 }
 
-.offcanvas-title-lg::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 70%;
-  height: 2px;
-  background-color: currentColor;
-  opacity: 0.6;
+.navbar{ position:relative; }
+.nav-slot-center{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  pointer-events:none;
 }
 
-/* ========== Offcanvas typography (MENU + links) ========== */
-.offcanvas-title-lg {
-  width: 100%;
-  text-align: center;
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 1.25rem;
-  /* base */
+.navbar-title{
+  position:relative;
+  display:flex;
+  gap:6px;
+  align-items:center;
+  justify-content:center;
+  white-space:nowrap;
+  font-weight:600;
+  font-size:1.25rem;
+  text-align:center;
+  padding-bottom:8px;
+}
+.navbar-title::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:75%;
+  height:1px;
+  background-color:#000;
+  opacity:.7;
 }
 
-.offcanvas .nav-link {
-  font-size: 1.05rem;
-  /* base */
-  padding-top: 0.65rem;
-  padding-bottom: 0.65rem;
+@media (max-width:900px){
+  .navbar-title{ flex-direction:column; line-height:1.1; gap:0; }
+  .brand-line-1,.brand-line-2{ display:block; }
+}
+@media (min-width:992px){
+  .nav-slot-left,.nav-slot-right{ width:140px; }
+  .nav-slot-left{ justify-content:flex-start; }
+  .nav-slot-right{ justify-content:center; }
 }
 
-@media (min-width: 992px) {
-  .offcanvas-title-lg {
-    font-size: 1.4rem;
-  }
+/* Logo sizing */
+.navbar-logo{
+  height:75px;
+  width:auto;
+  display:block;
+  transition:transform 180ms ease;
+}
+.navbar-brand:hover .navbar-logo{ transform:scale(1.06); }
 
-  .offcanvas .nav-link {
-    font-size: 1.1rem;
-  }
+@media (min-width:992px){
+  .navbar-logo{ height:145px; }
+  .navbar-title{ font-size:3rem; }
+}
+@media (min-width:1600px){
+  .navbar{ padding-top:1rem; padding-bottom:1rem; }
+  .navbar-logo{ height:155px; }
+  .navbar-title{ font-size:4rem; }
+}
+@media (min-width:2000px){
+  .navbar-logo{ height:165px; }
+  .navbar-title{ font-size:5rem; }
 }
 
-@media (min-width: 1600px) {
-  .offcanvas-title-lg {
-    font-size: 1.6rem;
-  }
-
-  .offcanvas .nav-link {
-    font-size: 1.2rem;
-  }
+/* Hamburger sizing */
+.navbar-toggler{
+  padding:.25rem .5rem;
+  line-height:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.navbar-toggler-icon{ width:1.5rem; height:1.5rem; }
+@media (min-width:992px){
+  .navbar-toggler{ padding:.45rem .7rem; }
+  .navbar-toggler-icon{ width:1.85rem; height:1.85rem; }
+}
+@media (min-width:1200px){
+  .navbar-toggler{ padding:.55rem .8rem; }
+  .navbar-toggler-icon{ width:2rem; height:2rem; }
+}
+@media (min-width:1600px){
+  .navbar-toggler{ padding:.6rem .9rem; }
+  .navbar-toggler-icon{ width:2rem; height:2rem; }
+}
+@media (min-width:2000px){
+  .navbar-toggler{ padding:.75rem 1rem; }
+  .navbar-toggler-icon{ width:2.4rem; height:2.4rem; }
 }
 
-@media (min-width: 2000px) {
-  .offcanvas-title-lg {
-    font-size: 1.75rem;
-  }
+/* Rebinding: base pricing cards */
+.pricing-card{
+  background:var(--cb-section);
+  transition:transform 120ms ease;
+}
+.pricing-card:hover{ transform:translateY(-1px); }
 
-  .offcanvas .nav-link {
-    font-size: 1.28rem;
-  }
+/* Rebinding: add-on cards */
+.addon-card{
+  background:var(--cb-section);
+  transition:transform 120ms ease;
+  position:relative;
+}
+.addon-card:hover{ transform:translateY(-1px); box-shadow:0 8px 18px rgba(0,0,0,.06); }
+
+.addon-card .addon-toggle{
+  background:var(--cb-section);
+  cursor:pointer;
+}
+.addon-card .addon-toggle:hover{ background:rgba(0,0,0,.03); }
+.addon-card .addon-toggle:focus{ outline:none; }
+
+/* Expanded detail area (lighter for contrast) */
+.addon-detail{ background:var(--cb-surface); }
+
+.addon-detail-wrapper{ max-width:420px; }
+.addon-detail-wrapper p{ text-align:center; }
+
+/* ===============================
+   Subtle Gold Accents
+   =============================== */
+
+/* Form focus ring + border */
+.form-control:focus,
+.form-select:focus{
+  border-color:var(--cb-accent);
+  box-shadow:0 0 0 .2rem rgba(156,135,82,.22);
 }
 
-.offcanvas .nav-link {
-  font-weight: 400;
-  transition: all 0.15s ease;
+/* Links: nicer underline hover */
+a{ text-underline-offset:3px; }
+a:hover{ text-decoration-color:var(--cb-accent); }
+
+/* Heading micro-rule (apply via class in HTML) */
+.cb-heading{
+  position:relative;
+  padding-bottom:.6rem;
+}
+.cb-heading::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:0;
+  width:64px;
+  height:2px;
+  background:var(--cb-accent);
+  opacity:.85;
+  border-radius:2px;
 }
 
-.offcanvas .nav-link:hover {
-  font-weight: 700;
-  letter-spacing: 0.5px;
+/* Add-on gold side accent on hover + (modern browsers) expanded */
+.addon-card::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:12px;
+  bottom:12px;
+  width:2px;
+  background:transparent;
+  border-radius:2px;
+  transition:background 120ms ease;
 }
+.addon-card:hover::before{ background:rgba(156,135,82,.7); }
 
-/* ========== Navbar layout (3 slots) ========== */
-.navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-/* Remove Bootstrap default brand spacing */
-.navbar-brand {
-  padding: 0;
-  margin: 0;
-  line-height: 1;
-}
-
-/* Left / Right slots (small screens: auto width, no forced space) */
-.nav-slot-left,
-.nav-slot-right {
-  flex: 0 0 auto;
-  width: auto;
-  display: flex;
-  align-items: center;
-}
-
-.navbar {
-  position: relative;
-}
-
-.nav-slot-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none; /* prevents blocking hamburger clicks */
-}
-
-.navbar-title {
-  position: relative;
-  display: flex;
-  gap: 6px;
-  align-items: center;
-  justify-content: center;
-  white-space: nowrap;
-  font-weight: 600;
-  font-size: 1.25rem;
-  text-align: center;
-  padding-bottom: 8px;
-  /* space for line */
-}
-
-/* Proper centered underline */
-.navbar-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 75%;
-  height: 1px;
-  background-color: #000;
-  opacity: 0.7;
-}
-
-/* Stack on smaller screens */
-@media (max-width: 900px) {
-  .navbar-title {
-    flex-direction: column;
-    line-height: 1.1;
-    gap: 0;
-  }
-
-  .brand-line-1,
-  .brand-line-2 {
-    display: block;
-  }
-}
-
-/* Reserve symmetric space on desktop so title "feels" centered */
-@media (min-width: 992px) {
-
-  .nav-slot-left,
-  .nav-slot-right {
-    width: 140px;
-  }
-
-  .nav-slot-left {
-    justify-content: flex-start;
-  }
-
-  .nav-slot-right {
-    justify-content: center;
-  }
-}
-
-/* ========== Logo sizing ========== */
-.navbar-logo {
-  height: 75px;
-  /* base */
-  width: auto;
-  display: block;
-  /* removes inline baseline quirks */
-}
-
-@media (min-width: 992px) {
-  .navbar-logo {
-    height: 145px;
-  }
-
-  .navbar-title {
-    font-size: 3rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  .navbar {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
-
-  .navbar-logo {
-    height: 155px;
-  }
-
-  .navbar-title {
-    font-size: 4rem;
-  }
-}
-
-@media (min-width: 2000px) {
-  .navbar-logo {
-    height: 165px;
-  }
-
-  .navbar-title {
-    font-size: 5rem;
-  }
-}
-
-/* Smooth transition */
-.navbar-logo {
-  transition: transform 180ms ease;
-}
-
-/* Grow slightly on hover */
-.navbar-brand:hover .navbar-logo {
-  transform: scale(1.06);
-}
-
-
-/* ========== Hamburger (toggler) sizing ========== */
-.navbar-toggler {
-  padding: 0.25rem 0.5rem;
-  line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.navbar-toggler-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-@media (min-width: 992px) {
-  .navbar-toggler {
-    padding: 0.45rem 0.7rem;
-  }
-
-  .navbar-toggler-icon {
-    width: 1.85rem;
-    height: 1.85rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .navbar-toggler {
-    padding: 0.55rem 0.8rem;
-  }
-
-  .navbar-toggler-icon {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  .navbar-toggler {
-    padding: 0.6rem 0.9rem;
-  }
-
-  .navbar-toggler-icon {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-@media (min-width: 2000px) {
-  .navbar-toggler {
-    padding: 0.75rem 1rem;
-  }
-
-  .navbar-toggler-icon {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-}
-
-/* ========== Addon (toggler) Card ========== */
-.addon-card .addon-toggle {
-  cursor: pointer;
-}
-
-.addon-card .addon-toggle:hover {
-  background: rgba(0, 0, 0, 0.02);
-}
-
-.addon-card .addon-toggle:focus {
-  outline: none;
-}
-
-.addon-card {
-  transition: transform 120ms ease, box-shadow 120ms ease;
-}
-
-.addon-card:hover {
-  transform: translateY(-1px);
-}
-
-.addon-detail-wrapper {
-  max-width: 420px;
-  /* controls width of both image and text */
-}
-
-.addon-detail-wrapper p {
-  text-align: center;
-}
+/* Modern Chrome/Safari/Edge: keep accent when expanded */
+.addon-card:has(.collapse.show)::before{ background:rgba(156,135,82,.9); }
